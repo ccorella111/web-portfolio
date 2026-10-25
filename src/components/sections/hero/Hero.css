@@ -16,7 +16,7 @@
 
 .hero__name {
     grid-column: 1 / -1;
-    font: 800 clamp(52px, 11.5vw, 158px)/.9 var(--display);
+    font: 800 clamp(52px, 11.5vw, 168px)/.9 var(--display);
     letter-spacing: -.045em;
     margin: 26px 0 0;
 }
@@ -48,7 +48,7 @@
     border: 2px solid var(--black);
     background: var(--black);
     color: var(--white);
-    transition: background .25s, color .25s; transform: .25s var(--ease);
+    transition: background .25s, color .25s, transform: .25s var(--ease);
 }
 .btn:hover { background: var(--green); border-color: var(--green); transform: translateY(-2px); }
 .btn--ghost { background: transparent; color: var(--black); }

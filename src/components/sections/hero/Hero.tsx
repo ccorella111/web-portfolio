@@ -1,6 +1,7 @@
 import { profile } from "../../../data/profile";
 import { ui } from "../../../data/ui";
 import { useLanguage } from "../../../i18n/LanguageContext";
+import { GeometricTiles } from "./GeometricTiles";
 import './Hero.css';
 
 export function Hero() {
@@ -14,7 +15,7 @@ export function Hero() {
 
             <h1 className="hero__name">
                 <span className="hero__line"><span>{profile.firstName}</span></span>
-                <span className="hero__line"><span>{profile.lastName}</span><span className="hero__dot">.</span></span>
+                <span className="hero__line"><span>{profile.lastName}<span className="hero__dot">.</span></span></span>
             </h1>
 
             <div className="hero__role">
@@ -25,10 +26,12 @@ export function Hero() {
             <div className="hero__summary">
                 {t(profile.summary)}
                 <div className="hero__cta">
-                    <a className="btn" href="#proyectos">{t(ui.seeProjects)}<span className="btn_arrow">→</span></a>
+                    <a className="btn" href="#proyectos">{t(ui.seeProjects)}<span className="btn__arrow">→</span></a>
                     <a className="btn btn--ghost" href="#contacto">{t(ui.getInTouch)}</a>
                 </div>
             </div>
+
+            <GeometricTiles />
         </header>
     );
 }
