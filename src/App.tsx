@@ -5,6 +5,7 @@ import { TechMarquee } from './components/sections/marquee/TechMarquee';
 import { About } from './components/sections/about/About';
 import { Experience } from './components/sections/experience/Experience';
 import { Education } from './components/sections/education/Education';
+import { Projects } from './components/sections/projects/Projects';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <div className='wrap'>
           <About />
           <Experience />
+          <Projects />
           <Education />
         </div>
 
