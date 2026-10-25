@@ -1,0 +1,66 @@
+.hero { padding-block: 36px 48px; border-top: 6px solid var(--black); }
+
+.hero__badge { grid-column: 1 / -1; margin-top: 4px; }
+.availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font: 500 12px var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    background: var(--mint);
+    color: var(--green);
+    padding: 6px 12px;
+}
+.availability i { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+
+.hero__name {
+    grid-column: 1 / -1;
+    font: 800 clamp(52px, 11.5vw, 158px)/.9 var(--display);
+    letter-spacing: -.045em;
+    margin: 26px 0 0;
+}
+.hero__line { display: block; overflow: hidden; padding-bottom: .04em; }
+.hero__line > span { display: inline-block; animation: rise 1s var(--ease) both; }
+.hero__line:nth-child(2) > span { animation-delay: .12s; }
+.hero__dot { color: var(--amber); }
+@keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
+
+.hero__role {
+    grid-column: 1 / 5;
+    font: 500 clamp(20px, 2vw, 24px)/1.35 var(--display);
+    margin-top: 40px;
+    letter-spacing: -.01em;
+    animation: fade .9s .35s both;
+}
+.hero__role em { font-style: normal; color: var(--green); }
+
+.hero__summary { grid-column: 5 / 9; margin-top: 42px; color: var(--grey); animation: fade .9s .45s both; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    font: 600 15px var(--display);
+    text-decoration: none;
+    border: 2px solid var(--black);
+    background: var(--black);
+    color: var(--white);
+    transition: background .25s, color .25s; transform: .25s var(--ease);
+}
+.btn:hover { background: var(--green); border-color: var(--green); transform: translateY(-2px); }
+.btn--ghost { background: transparent; color: var(--black); }
+.btn--ghost:hover { background: var(--amber); border-color: var(--amber); color: var(--black); }
+.btn__arrow { transition: transform .25s var(--ease); }
+.btn:hover .btn__arrow { transform: translateX(4px); }
+
+@media (max-width: 980px) {
+    .hero__role { grid-column: 1 / 7; }
+    .hero__summary { grid-column: 7 / 13 }
+}
+@media (max-width: 620px) {
+    .hero__role, .hero__summary { grid-column: 1 / -1; }
+    .hero__summary { margin-top: 4px; }
+}
