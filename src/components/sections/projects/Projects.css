@@ -1,0 +1,54 @@
+.projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+
+.project {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--black);
+    background: var(--white);
+    transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.project:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--black); }
+
+.cover { position: relative; aspect-ratio: 16 / 10; border-bottom: 2px solid var(--black); overflow: hidden; }
+.cover--green { background: var(--green); }
+.cover--amber { background: var(--amber); }
+.cover--black { background: var(--black); }
+.cover__shape { position: absolute; transition: transform .8s var(--ease);  }
+.project:hover .cover__shape--a { transform: rotate(90deg); }
+.project:hover .cover__shape--b { transform: translateX(-14%); }
+.project:hover .cover__shape--c { transform: scale(1.15); }
+.cover__label {
+    position: absolute;
+    left: 14px;
+    bottom: 12px;
+    font: 500 11px var(--mono);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    background: var(--white);
+    border: 1px solid var(--black);
+}
+
+.project__body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+.project__category { font: 500 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--grey); }
+.project h3 { font: 600 26px/1.15 var(--display); letter-spacing: -.02em; margin: 8px 0 10px; }
+.project p { color: var(--grey); margin: 0 0 16px; font-size: 15px; }
+.project .chips { margin-top: auto; }
+
+.project__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--light);
+    font: 600 14px var(--display);
+    text-decoration: none;
+}
+.project__arrow { transition: transform .3s var(--ease); }
+.project:hover .project__arrow { transform: translateX(5px); }
+.project__link--private { font: 500 13px var(--mono); color: var(--grey); }
+
+@media (max-width: 980px) { .projects { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .projects { grid-template-columns: 1fr; } }

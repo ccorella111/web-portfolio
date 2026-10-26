@@ -1,0 +1,20 @@
+.tiles { 
+    grid-column: 9 / 13;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    aspect-ratio: 1;
+    max-width: 100%;
+    animation: fade 1s .55s both;
+ }
+ .tiles__cell { position: relative; background: var(--paper); overflow: hidden; }
+ .tiles__cell b {
+    position: absolute;
+    inset: 0;
+    transition: transform .9s var(--ease), border-radius .9s var(--ease), background-color .9s var(--ease);
+ }
+
+ @media (max-width: 980px) {
+    .tiles { grid-column: 1 / -1; max-width: 420px; margin-top: 28px; }
+ }

@@ -1,0 +1,19 @@
+:root {
+    --white:  #fbfbfa;
+    --paper:  #f1f3ef;
+    --black:  #111312;
+    --grey:   #5b605d;
+    --light:  #e1e4df;
+    --green:  #1d4d3a;
+    --green2: #2c6b52;
+    --mint:   #bfe3d0;
+    --amber:  #e9a23b;
+    --coral:  #d5673a;
+
+    --display:  "Archivo", system-ui, sans-serif;
+    --body:     "IBM Plex Sans", system-ui, sans-serif;
+    --mono:     "IBM Plex Mono", ui-monospace, monospace;
+
+    --ease: cubic-bezier(.2, .7, .1, 1);
+    color-scheme: light;
+}
