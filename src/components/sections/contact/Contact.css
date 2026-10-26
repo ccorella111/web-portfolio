@@ -1,0 +1,65 @@
+.contact { background: var(--green); color: var(--white); margin-top: 80px; position: relative; overflow: hidden; }
+.contact__inner { padding-block: 72px; position: relative; z-index: 1; }
+
+.contact h2 {
+    grid-column: 1 / 8;
+    font: 800 clamp(40px, 6vw, 88px)/.95 var(--display);
+    letter-spacing: -.04em;
+    margin: 0;
+    text-wrap: balance;
+}
+.contact h2 em { font-style: normal; color: var(--amber); }
+
+.contact__list { grid-column: 9 / 13; align-self: end; display: grid; gap: 16px; }
+.contact__list small {
+    display: block;
+    font: 500 11px var(--mono);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--mint);
+}
+.contact__list a, .contact__value { font: 500 17px var(--display); overflow-wrap: anywhere; }
+.contact__list a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(251, 251, 250, .35);
+    transition: border-color .2s, color .2s;
+}
+.contact__list a:hover { color: var(--amber); border-color: var(--amber); }
+
+.contact__row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.contact__value { user-select: all; }
+.contact__copy {
+    font: 500 12px var(--mono);
+    background: var(--amber);
+    color: var(--black);
+    border: 0;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+.contact__copy:hover { transform: translateY(-2px); }
+
+.contact__orb { position: absolute; border-radius: 50%; pointer-events: none; }
+.contact__orb--ring {
+    width: 420px; height: 420px;
+    right: -120px; top: -160px;
+    border: 60px solid var(--green2);
+    animation: spin 40s linear infinite; 
+}
+.contact__orb--leaf {
+    width: 160px; height: 160px;
+    right: 22%; bottom: -80px;
+    background: var(--amber);
+    opacity: .9;
+    border-radius: 0 100% 0 0;
+    animation: sway 9s ease-in-out infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes sway { 50% { transform: rotate(-12deg) translateY(-10px); } }
+
+@media (max-width: 980px) {
+    .contact h2, .contact__list { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+    .contact__orb--ring { width: 260px; height: 260px; border-width: 40px; }
+}

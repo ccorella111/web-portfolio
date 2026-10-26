@@ -1,0 +1,11 @@
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-block: 20px;
+    font: 400 12px var(--mono);
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}

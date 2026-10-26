@@ -7,6 +7,8 @@ import { Experience } from './components/sections/experience/Experience';
 import { Education } from './components/sections/education/Education';
 import { Projects } from './components/sections/projects/Projects';
 import { Skills } from './components/sections/skills/Skills';
+import { Contact } from './components/sections/contact/Contact';
+import { Footer } from './components/layout/Footer';
 
 function App() {
 
@@ -29,7 +31,9 @@ function App() {
           <Skills />
         </div>
 
+        <Contact />
       </main>
+      <Footer />
     </>
   )
 }
