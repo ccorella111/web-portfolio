@@ -16,8 +16,8 @@ export const education: TimelineEntry[] = [
     title: { es: 'Técnico Medio en Redes de Computadoras', en: 'Technical Diploma in Computer Networking' },
     org: { es: 'Colegio Técnico Profesional de Pital', en: 'Colegio Técnico Profesional de Pital' },
     description: {
-      es: 'Cisco CCNA, Routing & Switching · Coursera: Agile con Jira, Programación con Java',
-      en: 'Cisco CCNA, Routing & Switching · Coursera: Agile with Jira, Programming with Java',
+      es: 'Cisco CCNA, Routing & Switching',
+      en: 'Cisco CCNA, Routing & Switching',
     },
   },
 ];
