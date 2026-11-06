@@ -119,16 +119,105 @@ export const projects: Project[] = [
     category: { es: 'Desarrollo web', en: 'Web development' },
     status: { es: 'Completado', en: 'Completed' },
     description: {
-      es: 'Dashboard de finanzas personales con autenticación, CRUD de gastos e ingresos, y gráficos filtrables por día, semana, mes o rango.',
-      en: 'Personal finance dashboard with authentication, expense and income CRUD, and charts filtered by day, week, month or range.',
+      es: 'Dashboard de finanzas personales con inicio de sesión por correo o Google, registro de ingresos y gastos, y gráficos filtrables por día, semana, mes, año o rango.',
+      en: 'Personal finance dashboard with email or Google sign-in, income and expense tracking, and charts filtered by day, week, month, year or custom range.',
     },
-    stack: ['Django', 'PostgreSQL', 'Tailwind'],
+    stack: ['Django', 'PostgreSQL', 'Tailwind', 'Chart.js'],
     link: { kind: 'repo', url: 'https://github.com/ccorella111/Finance-Dashboard' },
     cover: 'green',
+    details: {
+      overview: {
+        es: 'Aplicación web para llevar las finanzas personales. Cada usuario registra sus ingresos por fuente y sus gastos por categoría, y un dashboard le muestra su balance, totales y gráficos para el periodo que elija. Los montos se manejan en colones.',
+        en: 'Web application to manage personal finances. Each user records income by source and expenses by category, and a dashboard shows their balance, totals and charts for any period they choose. Amounts are handled in Costa Rican colones.',
+      },
+      features: [
+        {
+          es: 'Registro e inicio de sesión con correo o con Google. Si ya existe una cuenta con el mismo correo, se vincula automáticamente.',
+          en: 'Sign-up and sign-in with email or Google. If an account with the same email already exists, it is linked automatically.',
+        },
+        {
+          es: 'Registro, edición y eliminación de ingresos (9 fuentes) y gastos (9 categorías), con paginación y mensajes de confirmación.',
+          en: 'Create, edit and delete income (9 sources) and expenses (9 categories), with pagination and confirmation messages.',
+        },
+        {
+          es: 'Dashboard con balance, ingresos y gastos totales, y los últimos 5 movimientos.',
+          en: 'Dashboard with balance, total income and expenses, and the 5 latest transactions.',
+        },
+        {
+          es: 'Cuatro gráficos: ingresos vs. gastos, balance acumulado, gastos por categoría e ingresos por fuente.',
+          en: 'Four charts: income vs. expenses, cumulative balance, expenses by category and income by source.',
+        },
+        {
+          es: 'Filtro de periodo: hoy, última semana, último mes, último año o un rango personalizado.',
+          en: 'Period filter: today, last week, last month, last year or a custom range.',
+        },
+      ],
+      tech: [
+        { area: { es: 'Backend', en: 'Backend' }, items: 'Python, Django 6' },
+        { area: { es: 'Autenticación', en: 'Auth' }, items: 'Django auth, django-allauth (Google OAuth 2.0)' },
+        { area: { es: 'Base de datos', en: 'Database' }, items: 'PostgreSQL, psycopg2' },
+        { area: { es: 'Frontend', en: 'Frontend' }, items: 'Django templates, Tailwind CSS, JavaScript' },
+        { area: { es: 'Gráficos', en: 'Charts' }, items: 'Chart.js 4' },
+        { area: { es: 'Interfaz', en: 'UI' }, items: 'SweetAlert2, Font Awesome' },
+        { area: { es: 'Configuración', en: 'Config' }, items: 'python-decouple (.env)' },
+      ],
+      highlights: [
+        {
+          es: 'Un endpoint JSON calcula los datos de los gráficos directamente en la base de datos (Sum, TruncDay, TruncMonth). Agrupa por día, o por mes si el rango supera 60 días, y completa los periodos sin movimientos para que las líneas sean continuas.',
+          en: 'A JSON endpoint computes chart data directly in the database (Sum, TruncDay, TruncMonth). It groups by day, or by month when the range exceeds 60 days, and fills in periods with no transactions so the lines stay continuous.',
+        },
+        {
+          es: 'Cada consulta se filtra por el usuario autenticado: nadie puede ver, editar ni borrar registros de otra persona. Las vistas exigen inicio de sesión y las eliminaciones solo se aceptan por POST.',
+          en: 'Every query is scoped to the signed-in user, so no one can view, edit or delete another person’s records. Views require login and deletions are only accepted via POST.',
+        },
+        {
+          es: 'Adaptador propio de django-allauth: usa el correo como nombre de usuario, toma el nombre desde Google y omite los mensajes automáticos en inglés.',
+          en: 'Custom django-allauth adapter: it uses the email as username, takes the name from Google and skips the automatic English messages.',
+        },
+      ],
+      gallery: [
+        {
+          src: 'projects/financy/arquitectura.png',
+          kind: 'architecture',
+          caption: { es: 'Arquitectura: Django, autenticación con Google y PostgreSQL', en: 'Architecture: Django, Google sign-in and PostgreSQL' },
+          alt: {
+            es: 'Diagrama: el navegador se conecta a Django, que tiene vistas de ingresos y gastos, una API para los gráficos y autenticación con allauth, y guarda los datos en PostgreSQL.',
+            en: 'Diagram: the browser connects to Django, which has income and expense views, a chart data API and allauth authentication, and stores data in PostgreSQL.',
+          },
+        },
+        {
+          src: 'projects/financy/base-de-datos.png',
+          kind: 'database',
+          caption: { es: 'Modelo de datos: usuarios, transacciones y cuentas de Google', en: 'Data model: users, transactions and Google accounts' },
+          alt: {
+            es: 'Diagrama entidad-relación: un usuario tiene muchas transacciones y puede tener una cuenta de Google vinculada.',
+            en: 'Entity-relationship diagram: a user has many transactions and can have a linked Google account.',
+          },
+        },
+        {
+          src: 'projects/financy/dashboard.png',
+          kind: 'screenshot',
+          caption: { es: 'Dashboard: ingresos vs. gastos del último año', en: 'Dashboard: income vs. expenses over the last year' },
+          alt: { es: 'Captura del dashboard con un gráfico de barras de ingresos y gastos por mes', en: 'Dashboard screenshot with a monthly income and expense bar chart' },
+        },
+        {
+          src: 'projects/financy/categorias.png',
+          kind: 'screenshot',
+          caption: { es: 'Gastos por categoría', en: 'Expenses by category' },
+          alt: { es: 'Captura del dashboard con un gráfico de dona de gastos por categoría', en: 'Dashboard screenshot with a doughnut chart of expenses by category' },
+        },
+        {
+          src: 'projects/financy/gastos.png',
+          kind: 'screenshot',
+          caption: { es: 'Registro de gastos con paginación', en: 'Expense records with pagination' },
+          alt: { es: 'Captura de la tabla de gastos', en: 'Screenshot of the expenses table' },
+        },
+      ],
+    },
   },
   {
     slug: 'apiario',
-    name: { es: 'Apiario local', en: 'Local apiary' },
+    name: { es: 'Apiario local', en: 'Local apiary' }, 
     category: { es: 'Sitio web', en: 'Website' },
     status: { es: 'Cliente real', en: 'Client project' },
     description: {
