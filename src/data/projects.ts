@@ -217,19 +217,73 @@ export const projects: Project[] = [
   },
   {
     slug: 'apiario',
-    name: { es: 'Apiario local', en: 'Local apiary' }, 
-    category: { es: 'Sitio web', en: 'Website' },
+    name: { es: 'Apiario El Dulce Vuelo', en: 'Apiario El Dulce Vuelo' },
+    category: { es: 'Sitio web · Proyecto en equipo', en: 'Website · Team project' },
     status: { es: 'Cliente real', en: 'Client project' },
     description: {
-      es: 'Landing page con misión, productos, contacto y redes sociales para dar visibilidad a un negocio local.',
-      en: 'Landing page with mission, products, contact and social channels to give a local business visibility.',
+      es: 'Landing page para un apiario local: muestra sus productos, su historia y su ubicación, y recibe pedidos por WhatsApp con un mensaje ya escrito.',
+      en: 'Landing page for a local apiary: it presents its products, story and location, and takes orders through WhatsApp with a prefilled message.',
     },
-    stack: ['Next.js', 'TypeScript', 'Tailwind'],
-    link: {
-      kind: 'private',
-      note: { es: 'Código privado por confidencialidad del cliente', en: 'Private code, client confidentiality' },
-    },
+    stack: ['Next.js', 'TypeScript', 'Tailwind', 'Leaflet'],
+    link: { kind: 'live', url: 'https://beekeepingsite.netlify.app/' },
     cover: 'amber',
+    details: {
+      overview: {
+        es: 'Sitio web de una sola página para Apiario El Dulce Vuelo, un negocio local de miel y productos de la colmena. Lo desarrollamos dos personas para un cliente real, con el objetivo de darle presencia en internet y facilitar los pedidos desde el celular.',
+        en: 'Single-page website for Apiario El Dulce Vuelo, a local business selling honey and hive products. It was built by a team of two for a real client, to give the business an online presence and make ordering from a phone easy.',
+      },
+      features: [
+        {
+          es: 'Catálogo de productos con descripción, presentación y precio en colones.',
+          en: 'Product catalog with description, size and price in Costa Rican colones.',
+        },
+        {
+          es: 'Pedidos por WhatsApp: cada producto abre un chat con un mensaje ya escrito para ese producto.',
+          en: 'WhatsApp orders: each product opens a chat with a message already written for that product.',
+        },
+        {
+          es: 'Secciones de inicio, productos, nosotros y contacto, con menú adaptado al celular.',
+          en: 'Home, products, about and contact sections, with a mobile-friendly menu.',
+        },
+        {
+          es: 'Mapa interactivo con la ubicación del apiario y enlaces a sus redes sociales.',
+          en: 'Interactive map with the apiary’s location and links to its social media.',
+        },
+      ],
+      tech: [
+        { area: { es: 'Framework', en: 'Framework' }, items: 'Next.js 16 (App Router), React 19' },
+        { area: { es: 'Lenguaje', en: 'Language' }, items: 'TypeScript' },
+        { area: { es: 'Estilos', en: 'Styling' }, items: 'Tailwind CSS 4' },
+        { area: { es: 'Mapa', en: 'Map' }, items: 'Leaflet, React Leaflet, OpenStreetMap' },
+        { area: { es: 'Íconos', en: 'Icons' }, items: 'React Icons' },
+        { area: { es: 'Hosting', en: 'Hosting' }, items: 'Netlify' },
+      ],
+      highlights: [
+        {
+          es: 'Los productos viven en un archivo de datos tipado: agregar o cambiar un producto es editar ese archivo, sin tocar los componentes.',
+          en: 'Products live in a typed data file: adding or changing a product means editing that file, without touching the components.',
+        },
+        {
+          es: 'El mapa se carga solo en el navegador, y en pantallas táctiles se activa con un toque, para no atrapar el desplazamiento de la página en el celular.',
+          en: 'The map loads only in the browser, and on touch screens it activates with a tap, so it doesn’t trap page scrolling on phones.',
+        },
+        {
+          es: 'Trabajo en equipo con Git: ramas por funcionalidad, pull requests en GitHub y una rama de integración antes de publicar.',
+          en: 'Team workflow with Git: feature branches, pull requests on GitHub and an integration branch before release.',
+        },
+      ],
+      gallery: [
+        {
+          src: 'projects/apiario/arquitectura.png',
+          kind: 'architecture',
+          caption: { es: 'Arquitectura del sitio y flujo de trabajo del equipo', en: 'Site architecture and team workflow' },
+          alt: {
+            es: 'Diagrama: una página en Next.js con secciones, productos desde un archivo de datos, pedidos por WhatsApp y un mapa con Leaflet, publicada en Netlify; abajo, el flujo de ramas y pull requests.',
+            en: 'Diagram: a Next.js page with sections, products from a data file, WhatsApp orders and a Leaflet map, deployed on Netlify; below, the branch and pull request workflow.',
+          },
+        },
+      ],
+    },
   },
   {
     slug: 'jarvistec',

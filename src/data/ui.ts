@@ -23,6 +23,7 @@ export const ui = {
   viewLive: { es: 'Ver sitio en vivo', en: 'View live site' },
   viewDetails: { es: 'Ver detalles', en: 'View details' },
   images: { es: 'imágenes', en: 'images' },
+  image: { es: 'imagen', en: 'image' },
   close: { es: 'Cerrar', en: 'Close' },
   previous: { es: 'Anterior', en: 'Previous' },
   next: { es: 'Siguiente', en: 'Next' },

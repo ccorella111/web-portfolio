@@ -36,7 +36,7 @@ export function ProjectCard({ project, onOpenDetails }: ProjectCardProps) {
                 {details && (
                 <button type="button" className="project__details" onClick={() => onOpenDetails(project.slug)}>
                     <span>{t(ui.viewDetails)}</span>
-                    {imageCount > 0 && <span className="project__count">{imageCount} {t(ui.images)}</span>}
+                    {imageCount > 0 && <span className="project__count">{imageCount} {t(imageCount === 1 ? ui.image : ui.images)}</span>}
                 </button>
                 )}
 
