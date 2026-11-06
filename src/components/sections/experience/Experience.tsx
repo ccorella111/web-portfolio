@@ -7,7 +7,7 @@ import { Timeline } from "../../ui/Timeline";
 export function Experience() {
     const { t } = useLanguage();
     return (
-        <SectionBlock id="experience" title={t(ui.sections.experience)}>
+        <SectionBlock id="experiencia" title={t(ui.sections.experience)}>
             <Timeline entries={experience} />
         </SectionBlock>
     )

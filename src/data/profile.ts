@@ -29,7 +29,7 @@ export const facts: Fact[] = [
   },
   {
     label: { es: 'Especialidad', en: 'Focus' },
-    highlight: { es: 'Full stack', en: 'Full stack' },
+    highlight: { es: 'Desarrollo Web', en: 'Web Development' },
     after: { es: ' · Django', en: ' · Django' },
   },
   {
@@ -51,6 +51,6 @@ export const marqueeTech = [
 
 export const contact: ContactLink[] = [
   { label: 'Email', value: 'cristian.corella02@gmail.com', copyable: true },
-  { label: 'LinkedIn', value: 'cristian-corella-a4b149291', url: 'https://www.linkedin.com/in/cristian-corella-a4b149291' },
+  { label: 'LinkedIn', value: 'cristiancorella', url: 'https://www.linkedin.com/in/cristiancorella' },
   { label: 'GitHub', value: 'ccorella111', url: 'https://github.com/ccorella111' },
 ];
