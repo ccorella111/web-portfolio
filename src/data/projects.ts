@@ -145,14 +145,93 @@ export const projects: Project[] = [
   {
     slug: 'jarvistec',
     name: { es: 'JarvisTEC', en: 'JarvisTEC' },
-    category: { es: 'IA / API', en: 'AI / API' },
-    status: { es: 'Completado', en: 'Completed' },
+    category: { es: 'IA · Proyecto en equipo', en: 'AI · Team project' },
+    status: { es: 'Completo', en: 'Completed' },
     description: {
-      es: 'API REST que sirve diez modelos de ML, con transcripción de voz, comandos y reconocimiento de emociones en la nube.',
-      en: 'REST API serving ten ML models, with speech transcription, commands and cloud emotion recognition.',
+      es: 'Asistente de IA por voz y cámara: reconoce comandos hablados, detecta emociones en el rostro y sirve 10 modelos de machine learning desde una sola API REST.',
+      en: 'Voice and camera AI assistant: it understands spoken commands, detects facial emotions and serves 10 machine learning models through one REST API.',
     },
-    stack: ['Python', 'FastAPI', 'Azure', 'GCP'],
+    stack: ['Python', 'FastAPI', 'scikit-learn', 'OpenCV', 'Azure'],
     link: { kind: 'repo', url: 'https://github.com/ccorella111/jarvistec' },
     cover: 'black',
+    details: {
+      overview: {
+        es: 'Asistente de IA web desarrollado en equipo (3 estudiantes) en el Tecnológico de Costa Rica. El usuario le habla o se muestra a la cámara: el asistente reconoce la voz, detecta la emoción, responde comandos y lee sus respuestas en voz alta. Además, sirve 10 modelos de machine learning a través de una sola API REST.',
+        en: 'Web-based AI assistant built as a team project (3 students) at Tecnológico de Costa Rica. The user talks to it or shows their face to the camera: it recognizes speech, detects the user’s emotion, answers voice commands and reads its answers aloud. It also serves 10 machine learning models through one REST API.',
+      },
+      features: [
+        {
+          es: 'Comandos de voz: voz a texto en inglés con Azure Speech, un intérprete que convierte lo que dice el usuario en una acción, y respuesta leída en voz alta por el navegador.',
+          en: 'Voice commands: English speech-to-text with Azure Speech, an interpreter that maps what the user says to an action, and the answer read aloud by the browser.',
+        },
+        {
+          es: 'Detección de emociones con la cámara: detecta el rostro y clasifica 8 emociones (felicidad, tristeza, enojo, sorpresa, miedo, asco, desprecio y neutral) con un nivel de confianza.',
+          en: 'Webcam emotion detection: finds the face and classifies 8 emotions (happiness, sadness, anger, surprise, fear, disgust, contempt and neutral) with a confidence score.',
+        },
+        {
+          es: 'Explorador de modelos: se elige cualquiera de los 10 modelos, se ve su descripción y se ejecutan predicciones desde un formulario.',
+          en: 'Model explorer: pick any of the 10 models, read its description and run predictions from a form.',
+        },
+        {
+          es: 'Interfaz web de una sola página, servida por la misma API en /ui.',
+          en: 'Single-page web interface served by the same API at /ui.',
+        },
+      ],
+      tech: [
+        { area: { es: 'Backend', en: 'Backend' }, items: 'Python, FastAPI, Uvicorn, Pydantic, Swagger/OpenAPI' },
+        { area: { es: 'ML / datos', en: 'ML / data' }, items: 'scikit-learn, pandas, NumPy, Matplotlib, Seaborn, Jupyter, joblib' },
+        { area: { es: 'Visión', en: 'Vision' }, items: 'OpenCV, HSEmotion (ONNX), ONNX Runtime' },
+        { area: { es: 'Nube', en: 'Cloud' }, items: 'Azure Speech (speech-to-text)' },
+        { area: { es: 'Frontend', en: 'Frontend' }, items: 'HTML, CSS, JavaScript, getUserMedia, MediaRecorder, Web Speech' },
+        { area: { es: 'Calidad', en: 'Testing' }, items: 'pytest (25 pruebas / tests), .env con proveedores simulados / mock providers' },
+      ],
+      highlights: [
+        {
+          es: '10 modelos de regresión y clasificación entrenados con datos públicos (grasa corporal, cirrosis, hepatitis C, precio del aguacate y más), cada uno con su notebook de Jupyter y comparado contra un modelo base.',
+          en: '10 regression and classification models trained on public datasets (body fat, cirrhosis, hepatitis C, avocado prices and more), each with its own Jupyter notebook and compared against a baseline.',
+        },
+        {
+          es: 'Registro automático de modelos: se cargan con joblib al iniciar, y un modelo nuevo queda disponible como endpoint sin modificar el código de las rutas.',
+          en: 'Automatic model registry: models load with joblib at startup, and a new model becomes an endpoint without changing the router code.',
+        },
+        {
+          es: 'Cuando Google dejó de ofrecer la detección de emociones en Cloud Vision, se reemplazó por un modelo local (OpenCV + HSEmotion) que funciona sin internet, sin claves y sin límite de uso.',
+          en: 'When Google deprecated emotion detection in Cloud Vision, it was replaced with a local model (OpenCV + HSEmotion) that runs offline, with no keys and no usage limits.',
+        },
+        {
+          es: 'Proveedores simulados configurables en .env, para desarrollar y probar sin claves de API.',
+          en: 'Mock providers configurable in .env, to develop and test without API keys.',
+        },
+      ],
+      gallery: [
+        {
+          src: 'projects/jarvistec/arquitectura.png',
+          kind: 'architecture',
+          caption: { es: 'Arquitectura: interfaz web, API en FastAPI, modelos y servicios', en: 'Architecture: web interface, FastAPI service, models and services' },
+          alt: {
+            es: 'Diagrama: la interfaz web se conecta a una API en FastAPI con rutas de voz, comandos, emociones y modelos; usa Azure Speech y un modelo local de emociones.',
+            en: 'Diagram: the web interface connects to a FastAPI service with voice, command, emotion and model routes; it uses Azure Speech and a local emotion model.',
+          },
+        },
+        {
+          src: 'projects/jarvistec/resultados.png',
+          kind: 'results',
+          caption: { es: 'Resultados de los 10 modelos con datos de prueba', en: 'Results of the 10 models on test data' },
+          alt: {
+            es: 'Tabla con los 5 modelos de clasificación y los 5 de regresión, qué predice cada uno y su métrica principal.',
+            en: 'Table of the 5 classification and 5 regression models, what each predicts and its key metric.',
+          },
+        },
+        {
+          src: 'projects/jarvistec/interfaz.png',
+          kind: 'screenshot',
+          caption: { es: 'Interfaz: cámara, asistente de voz y explorador de modelos', en: 'Interface: camera, voice assistant and model explorer' },
+          alt: {
+            es: 'Captura de la interfaz de JarvisTEC con un comando respondido y un modelo seleccionado.',
+            en: 'Screenshot of the JarvisTEC interface with an answered command and a selected model.',
+          },
+        },
+      ],
+    },
   },
 ];

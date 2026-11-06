@@ -26,7 +26,7 @@ export type ProjectLink =
 
 export type CoverVariant = 'green' | 'amber' | 'black' | 'mint';
 
-export type ImageKind = 'architecture' | 'database' | 'screenshot';
+export type ImageKind = 'architecture' | 'database' | 'results' | 'screenshot';
 
 export interface ProjectImage {
   src: string;

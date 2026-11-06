@@ -37,6 +37,7 @@ export const ui = {
     architecture: { es: 'Arquitectura', en: 'Architecture' },
     database: { es: 'Base de datos', en: 'Database' },
     screenshot: { es: 'Capturas', en: 'Screenshots' },
+    results: { es: 'Resultados', en: 'Results' },
   },
   contactTitleBefore: { es: 'Hablemos de tu próximo ', en: "Let's talk about your next " },
   contactTitleEm: { es: 'proyecto', en: 'project' },

@@ -4,7 +4,7 @@ import { ui } from '../../../data/ui';
 import { useLanguage } from '../../../i18n/LanguageContext';
 
 
-const KIND_ORDER: ImageKind[] = ['architecture', 'database', 'screenshot'];
+const KIND_ORDER: ImageKind[] = ['architecture', 'database', 'results', 'screenshot'];
 
 const imageUrl = (src: string) => `${import.meta.env.BASE_URL}${src}`;
 

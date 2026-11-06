@@ -117,6 +117,7 @@ html.no-scroll { overflow: hidden; }
 .gallery__kind::before { content: ""; width: 8px; height: 8px; background: var(--amber); }
 .gallery__group:nth-child(2) .gallery__kind::before { background: var(--green); border-radius: 50%; }
 .gallery__group:nth-child(3) .gallery__kind::before { background: var(--coral); border-radius: 0 100% 0 0; }
+.gallery__group:nth-child(4) .gallery__kind::before { background: var(--black); border-radius: 0 0 100% 0; }
 
 /* Diagramas a todo el ancho, capturas en cuadrícula */
 .gallery__grid { display: grid; gap: 20px; align-items: start; }
