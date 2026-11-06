@@ -13,12 +13,19 @@ function LockIcon() {
     ); 
 }
 
-export function ProjectCard({ project }: {project: Project}) {
+interface ProjectCardProps {
+    project: Project;
+    onOpenDetails: (slug: string) => void;
+}
+
+
+export function ProjectCard({ project, onOpenDetails }: ProjectCardProps) {
     const { t } = useLanguage();
-    const { link } = project;
+    const { link, details } = project;
+    const imageCount = details?.gallery.length ?? 0;
 
     return (
-        <article className="project">
+        <article className={`project${project.featured ? ' project--featured' : ''}`}>
             <ProjectCover variant={project.cover} label={t(project.status)} />
             <div className="project__body">
                 <div className="project__category">{t(project.category)}</div>
@@ -26,16 +33,23 @@ export function ProjectCard({ project }: {project: Project}) {
                 <p>{t(project.description)}</p>
                 <ChipList items={project.stack} />
 
+                {details && (
+                <button type="button" className="project__details" onClick={() => onOpenDetails(project.slug)}>
+                    <span>{t(ui.viewDetails)}</span>
+                    {imageCount > 0 && <span className="project__count">{imageCount} {t(ui.images)}</span>}
+                </button>
+                )}
+
                 {link.kind === 'private' ? (
-                    <div className="project__link project__link--private">
-                        <span>{t(ui.privateCode)}</span>
-                        <LockIcon />
-                    </div>
-                ):(
-                    <a className="project__link" href={link.url} target="_blank" rel="noopener noreferrer">
-                        <span>{t(link.kind === 'repo' ? ui.viewRepo : ui.viewLive)}</span>
-                        <span className="project__arrow">→</span>
-                    </a>
+                <div className="project__link project__link--private">
+                    <span>{t(link.note)}</span>
+                    <LockIcon />
+                </div>
+                ) : (
+                <a className="project__link" href={link.url} target="_blank" rel="noopener noreferrer">
+                    <span>{t(link.kind === 'repo' ? ui.viewRepo : ui.viewLive)}</span>
+                    <span className="project__arrow">→</span>
+                </a>
                 )}
             </div>
         </article>
