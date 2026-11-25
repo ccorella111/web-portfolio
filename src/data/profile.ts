@@ -8,8 +8,8 @@ export const profile = {
   degree: { es: 'Ingeniería en Computación,', en: 'Computer Engineering,' } as Text,
   school: { es: 'Instituto Tecnológico de Costa Rica', en: 'Costa Rica Institute of Technology' } as Text,
   summary: {
-    es: 'Desarrollo aplicaciones web full stack con Django y Next.js, e integro modelos de inteligencia artificial en sistemas que la gente usa a diario.',
-    en: 'I build full-stack web applications with Django and Next.js, and integrate AI models into systems people use every day.',
+    es: 'Desarrollo aplicaciones web con Django y Next.js, e integro modelos de inteligencia artificial.',
+    en: 'I build web applications with Django and Next.js, and integrate AI models into systems.',
   } as Text,
   about: {
     leadBefore: { es: 'Empecé configurando redes y hoy construyo ', en: 'I started by configuring networks; today I build ' } as Text,
@@ -39,7 +39,7 @@ export const facts: Fact[] = [
   {
     label: { es: 'Idiomas', en: 'Languages' },
     before: { es: 'Español · ', en: 'Spanish · ' },
-    highlight: { es: 'Inglés B2', en: 'English B2' },
+    highlight: { es: 'Inglés B1', en: 'English B1' },
   },
 ];
 
