@@ -225,7 +225,7 @@ export const projects: Project[] = [
       en: 'Landing page for a local apiary: it presents its products, story and location, and takes orders through WhatsApp with a prefilled message.',
     },
     stack: ['Next.js', 'TypeScript', 'Tailwind', 'Leaflet'],
-    link: { kind: 'live', url: 'https://beekeepingsite.netlify.app/' },
+    link: { kind: 'live', url: 'https://apiariodulcevuelo.com/' },
     cover: 'amber',
     details: {
       overview: {
