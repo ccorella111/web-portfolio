@@ -25,6 +25,8 @@ export function useScroll(sectionIds: string[]): ScrollState {
         const el = document.getElementById(id);
         if (el && el.offsetTop <= marker) activeId = id;
       }
+      const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+      if (atBottom) activeId = sectionIds[sectionIds.length - 1];
       setState({
         progress: max > 0 ? window.scrollY / max : 0,
         scrolled: window.scrollY > 10,
